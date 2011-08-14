@@ -1,0 +1,31 @@
+NANODE Custom Bootloader 
+========================
+
+See http://wiki.hackspace.org.uk/wiki/Project:Nanode and http://www.nanode.eu/ for details.
+
+This bootloader is based on the latest Optiboot available from http://code.google.com/p/optiboot/ and provides 2 targets in the makefile:
+
+
+1. Target nanodev5 - Optiboot with LED changed to PIN 6, flashes on reset and sketch upload. Additionally if SRAM fitted, looks for an image signature which then causes a new sketch stored in SRAM to be programmed to flash.
+2. Target nanode328 - Optiboot but with LED changed to PIN I/O 6, flashes on reset and sketch upload. This is a smaller bootloader.
+
+Files should be installed to sketchbook/hardware/NanodeBootLoader directory.
+
+When Arduino IDE restarted you should see two new boards these are:
+
+[Nanode] Nanode V5 w/ ATmega328 and SRAM
+[Nanode] Nanode V5 w/ ATmega328
+
+The first is the one that can reprogram the flash from SRAM image.
+
+SRAM image structure:
+
+Bytes 0-3 - Magic number - 0x79A5F0C1
+Bytes 4-5 - Number of bytes in image
+Bytes 6-x - Binary Image
+
+The image is always programmed to address 0x0000 onwards as this is the default for compiling Arduino sketches.
+
+The delivery mechanism for the new sketch is not defined here, it is currentl ypart of the main application. for example the demonstration uses a simple tftp server sketch that recieves a .hex image and stores it to SRAM.
+
+
