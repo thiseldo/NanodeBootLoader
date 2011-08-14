@@ -257,11 +257,11 @@ int main(void) {
   // asm volatile ("clr __zero_reg__");
 
   uint8_t ch;
-  LED_DDR |= _BV(DBG_LED1);
-  LED_DDR |= _BV(DBG_LED2);
+//  LED_DDR |= _BV(DBG_LED1);
+//  LED_DDR |= _BV(DBG_LED2);
 
-  DBG_LED1_ON;
-  DBG_LED2_OFF;
+//  DBG_LED1_ON;
+//  DBG_LED2_OFF;
 
   // Adaboot no-wait mod
   ch = MCUSR;
