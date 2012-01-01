@@ -4,7 +4,7 @@
 # Nanode support by Andrew Lindsay
 ##############################################################
 
-nanodev5.name=[Nanode] Nanode V5 w/ ATmega328 and SRAM
+nanodev5.name=[Nanode] Nanode w/ ATmega328, 3.3V, SRAM Prog
 nanodev5.upload.protocol=stk500
 nanodev5.upload.maximum_size=31744
 nanodev5.upload.speed=115200
@@ -21,7 +21,7 @@ nanodev5.build.core=arduino
 
 #############################################################
 
-nanode328.name=[Nanode] Nanode V5 w/ ATmega328
+nanode328.name=[Nanode] Nanode w/ ATmega328, 5V
 nanode328.upload.protocol=stk500
 nanode328.upload.maximum_size=32256
 nanode328.upload.speed=115200
@@ -38,7 +38,24 @@ nanode328.build.core=arduino
 
 ##############################################################
 
-nanodev5-1.name=[Nanode-1.0] Nanode V5 w/ ATmega328 and SRAM
+nanode3283v.name=[Nanode] Nanode w/ ATmega328, 3.3V
+nanode3283v.upload.protocol=stk500
+nanode3283v.upload.maximum_size=32256
+nanode3283v.upload.speed=115200
+nanode3283v.bootloader.low_fuses=0xff
+nanode3283v.bootloader.high_fuses=0xde
+nanode3283v.bootloader.extended_fuses=0x06
+nanode3283v.bootloader.path=nanodev5
+nanode3283v.bootloader.file=optiboot_nanode328.hex
+nanode3283v.bootloader.unlock_bits=0x3F
+nanode3283v.bootloader.lock_bits=0x0F
+nanode3283v.build.mcu=atmega328p
+nanode3283v.build.f_cpu=16000000L
+nanode3283v.build.core=arduino
+
+##############################################################
+
+nanodev5-1.name=[Nanode-1.0] Nanode w/ ATmega328, 3.3V, SRAM Prog
 nanodev5-1.upload.protocol=arduino
 nanodev5-1.upload.maximum_size=31744
 nanodev5-1.upload.speed=115200
@@ -56,7 +73,7 @@ nanodev5-1.build.variant=standard
 
 #############################################################
 
-nanode328-1.name=[Nanode-1.0] Nanode V5 w/ ATmega328
+nanode328-1.name=[Nanode-1.0] Nanode w/ ATmega328, 5V
 nanode328-1.upload.protocol=arduino
 nanode328-1.upload.maximum_size=32256
 nanode328-1.upload.speed=115200
@@ -71,6 +88,24 @@ nanode328-1.build.mcu=atmega328p
 nanode328-1.build.f_cpu=16000000L
 nanode328-1.build.core=arduino1.0
 nanode328-1.build.variant=standard
+
+##############################################################
+
+nanode3283v-1.name=[Nanode-1.0] Nanode w/ ATmega328, 3.3V
+nanode3283v-1.upload.protocol=arduino
+nanode3283v-1.upload.maximum_size=32256
+nanode3283v-1.upload.speed=115200
+nanode3283v-1.bootloader.low_fuses=0xff
+nanode3283v-1.bootloader.high_fuses=0xde
+nanode3283v-1.bootloader.extended_fuses=0x06
+nanode3283v-1.bootloader.path=nanodev5
+nanode3283v-1.bootloader.file=optiboot_nanode328.hex
+nanode3283v-1.bootloader.unlock_bits=0x3F
+nanode3283v-1.bootloader.lock_bits=0x0F
+nanode3283v-1.build.mcu=atmega328p
+nanode3283v-1.build.f_cpu=16000000L
+nanode3283v-1.build.core=arduino1.0
+nanode3283v-1.build.variant=standard
 
 ##############################################################
 
