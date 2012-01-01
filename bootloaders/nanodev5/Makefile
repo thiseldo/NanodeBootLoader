@@ -83,15 +83,17 @@ OBJDUMP        = avr-objdump
 #LDFLAGS = -Ttext=0x7E00
 
 # Extended Fuse Byte:
-# 0x05 = 0 0 0 0 0 1 0 1
+# 0x05 = 
+# 0 0 0 0 0 1 0 1
 # \---+---/ \-+-/
-# | +------ BODLEVEL Brownout detect at 2.5 to 2.9V
-# +-------------- Unused
+#     |       +------ BODLEVEL Brownout detect at 2.5 to 2.9V
+#     +-------------- Unused
 #
 # High Fuse Byte:
-# 0xD8 = 1 1 0 1 1 0 0 0 <-- BOOTRST Reset to bootloader
+# 0xD8 =
+# 1 1 0 1 1 0 0 0 <-- BOOTRST Reset to bootloader
 # ^ ^ ^ ^ ^ \+/
-# | | | | | +------- BOOTSZ 2Kword bootloader, 0x3800-0x3FFF, reset at 0x3800
+# | | | | |  +------- BOOTSZ 2Kword bootloader, 0x3800-0x3FFF, reset at 0x3800
 # | | | | +---------- EESAVE EEPROM erased in chip erase
 # | | | +------------ WDTON Watchdog timer off
 # | | +-------------- SPIEN SPI programming enabled
@@ -99,10 +101,11 @@ OBJDUMP        = avr-objdump
 # +------------------ RSTDISBL External Reset enabled
 #
 # Low Fuse Byte:
-# 0xFF = 1 1 1 1 1 1 1 1
+# 0xFF = 
+# 1 1 1 1 1 1 1 1
 # | | \+/ \--+--/
-# | | | +------- CKSEL Low power crystal, 16Kck delay
-# | | +------------- SUT 65ms delay
+# | |  |     +------- CKSEL Low power crystal, 16Kck delay
+# | |  +------------- SUT 65ms delay
 # | +---------------- CKOUT No clock out
 # +------------------ CKDIV8 No divide by 8 prescaler
 
