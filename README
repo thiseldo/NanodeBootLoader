@@ -26,6 +26,7 @@ Bytes 6-x - Binary Image
 
 The image is always programmed to address 0x0000 onwards as this is the default for compiling Arduino sketches.
 
-The delivery mechanism for the new sketch is not defined here, it is currentl ypart of the main application. for example the demonstration uses a simple tftp server sketch that recieves a .hex image and stores it to SRAM.
+The delivery mechanism for the new sketch is not defined here, it is currently part of the main application. for example the demonstration uses a simple tftp server sketch that recieves a .hex image and stores it to SRAM.
 
+If using arduino 1.0 then please replace the cores directory files with the one from the arduino distribution.
 
